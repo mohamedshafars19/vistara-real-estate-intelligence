@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default: LIGHT THEME */
+  --v-bg: #F9F6EE;
+  --v-surface: #FFFFFF;
+  --v-elevated: #FAF6F0;
+  --v-primary: #142334;
+  --v-secondary: #5F6973;
+  --v-accent: #C9AD98;
+  --v-accent-hover: #B9967F;
+  --v-soft-accent: #F1E8E2;
+  --v-border: #EAE3E0;
+  --v-muted: #8F9AA5;
+  --v-highlight: #C9AD98;
+}
+
+[data-theme="dark"] {
+  --v-bg: #101A27;
+  --v-surface: #162434;
+  --v-elevated: #1D2E40;
+  --v-primary: #F9F6EE;
+  --v-secondary: #C8C5BE;
+  --v-accent: #C9AD98;
+  --v-accent-hover: #D8BFAE;
+  --v-soft-accent: #24364A;
+  --v-border: #304050;
+  --v-muted: #8F9AA5;
+  --v-highlight: #C9AD98;
+}
+
+[data-theme="golden-hour"] {
+  --v-bg: #F3E4D3;
+  --v-surface: #FFF8F0;
+  --v-elevated: #F9EFE6;
+  --v-primary: #142334;
+  --v-secondary: #725F50;
+  --v-accent: #B97856;
+  --v-accent-hover: #9D5F43;
+  --v-soft-accent: #E5C4AE;
+  --v-border: #DCC5B3;
+  --v-muted: #8A7667;
+  --v-highlight: #EFD3A8;
+}
+
+body {
+  background-color: var(--v-bg);
+  color: var(--v-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Scrollbar for architectural feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--v-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--v-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--v-accent);
+}
+
+/* Leaflet map tweaks for dark/light integration */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--v-elevated);
+  font-family: inherit;
+}
+.leaflet-popup-content-wrapper {
+  background: var(--v-surface) !important;
+  color: var(--v-primary) !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--v-border) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12) !important;
+}
+.leaflet-popup-tip {
+  background: var(--v-surface) !important;
+}
